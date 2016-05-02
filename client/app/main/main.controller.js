@@ -8,9 +8,14 @@
 
       this.sum = arr => arr.reduce((p,c)=>p+1*c,0);
 
+      let ding = new Audio('assets/audio/ding.mp3');
+      let buzz = new Audio('assets/audio/buzz.mp3');
+
       this.reveal = answer=>{
 	if(answer.show) return;
 	// play the ding
+	ding.play();
+
 	answer.show = true;
 	if(this.xs < 3) this.qscore += answer.value;
       };
@@ -56,6 +61,7 @@
 
       this.x = ()=>{
 	this.xs += 1;
+	buzz.play();
       };
 
       this.games = [

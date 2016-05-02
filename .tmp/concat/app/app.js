@@ -37,9 +37,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 															}, 0);
 										};
 
+										var ding = new Audio('assets/audio/ding.mp3');
+										var buzz = new Audio('assets/audio/buzz.mp3');
+
 										this.reveal = function (answer) {
 															if (answer.show) return;
 															// play the ding
+															ding.play();
+
 															answer.show = true;
 															if (_this.xs < 3) _this.qscore += answer.value;
 										};
@@ -92,6 +97,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										this.x = function () {
 															_this.xs += 1;
+															buzz.play();
 										};
 
 										this.games = [{
