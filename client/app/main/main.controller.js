@@ -6,6 +6,8 @@
 
     constructor() {
 
+      this.sum = arr => arr.reduce((p,c)=>p+1*c,0);
+
       this.reveal = answer=>{
 	if(answer.show) return;
 	// play the ding
@@ -36,6 +38,7 @@
       this.nextGame = ()=> {
 	this.gameI = Math.min(this.games.length-1,this.gameI+1);
 	this.qI = 0;
+	this.fms = [[],[]];
       };
 
       this.prevQ = ()=> {

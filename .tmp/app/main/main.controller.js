@@ -8,6 +8,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										_classCallCheck(this, MainController);
 
+										this.sum = function (arr) {
+															return arr.reduce(function (p, c) {
+																				return p + 1 * c;
+															}, 0);
+										};
+
 										this.reveal = function (answer) {
 															if (answer.show) return;
 															// play the ding
@@ -46,6 +52,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.nextGame = function () {
 															_this.gameI = Math.min(_this.games.length - 1, _this.gameI + 1);
 															_this.qI = 0;
+															_this.fms = [[], []];
 										};
 
 										this.prevQ = function () {
