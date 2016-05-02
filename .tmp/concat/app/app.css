@@ -7369,6 +7369,29 @@ ul.answers {
   .controls .team {
     height: 160px;
     width: 120px; }
+    .controls .team img {
+      height: 80%;
+      width: auto; }
+
+.fast-money {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .fast-money .fast-round {
+    width: 40vw;
+    margin: 0 auto;
+    padding: 0; }
+    .fast-money .fast-round input {
+      background-color: black;
+      color: white;
+      height: 40px;
+      margin: 5px;
+      font-size: 25px; }
+      .fast-money .fast-round input + input {
+        width: 40px; }
 
 footer.footer {
   text-align: center;
