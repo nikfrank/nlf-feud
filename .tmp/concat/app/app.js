@@ -31,6 +31,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										_classCallCheck(this, MainController);
 
+										var avs = ['bernie', 'hillary', 'trump', 'bibi'];
+
+										this.av = ['trump', 'bibi'];
+										this.rotateAv = function (n) {
+															var c = avs.indexOf(_this.av[n]);
+															var c2 = avs.indexOf(_this.av[(n + 1) % 2]);
+
+															if ((c + 1) % avs.length === c2) c = (c + 2) % avs.length;else c = (c + 1) % avs.length;
+
+															_this.av[n] = avs[c];
+										};
+
 										this.sum = function (arr) {
 															return arr.reduce(function (p, c) {
 																				return p + 1 * c;
@@ -98,6 +110,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.x = function () {
 															_this.xs += 1;
 															buzz.play();
+										};
+
+										this.clear = function () {
+															_this.xs = 0;
+															_this.scores = [0, 0];
 										};
 
 										this.games = [{
@@ -337,7 +354,7 @@ angular.module('feudApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/main/main.html',
-    "<div ng-if=\"$ctrl.games[$ctrl.gameI].type == 'questions'\"><div class=question-text>{{$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].text}}</div><div class=qscore>{{$ctrl.qscore}}</div><div class=answer-col-container><ul class=answers><li ng-repeat=\"answer in $ctrl.ff($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+1}}</div></li></ul><ul class=answers ng-show=\"$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers.length>5\"><li ng-repeat=\"answer in $ctrl.lf($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+6}}</div></li></ul></div><div class=x-container><img src=assets/images/x.png ng-repeat=\"x in $ctrl.arr($ctrl.xs) track by $index\"></div></div><div class=fast-money ng-if=\"$ctrl.games[$ctrl.gameI].type == 'fast-money'\">FAST MONEY<div class=fast-round ng-repeat=\"b in [0,1]\"><input ng-repeat-start=\"a in [0,1,2,3,4]\"> <input ng-model=$ctrl.fms[b][a]><br ng-repeat-end>{{$ctrl.sum($ctrl.fms[b])}}</div>{{$ctrl.sum($ctrl.fms[0])+$ctrl.sum($ctrl.fms[1])}}</div><!--controls for game, x, teams...--><div class=controls><div class=team ng-click=$ctrl.scoreTo(0)>TEAM TRUMP: {{$ctrl.scores[0]}} <img src=assets/images/trump.png></div><button ng-click=$ctrl.prevQ()>Prev Q</button> <button ng-click=$ctrl.nextQ()>Next Q</button> <button ng-click=$ctrl.x()>X</button> <button ng-click=$ctrl.prevGame()>Prev Game</button> <button ng-click=$ctrl.nextGame()>Next Game</button><div class=team ng-click=$ctrl.scoreTo(1)>TEAM BIBI: {{$ctrl.scores[1]}} <img src=assets/images/bibi.png></div></div>"
+    "<div ng-if=\"$ctrl.gameI == -1\" class=logo><img src=assets/images/logo.png></div><div ng-if=\"$ctrl.games[$ctrl.gameI].type == 'questions'\"><div class=question-text>{{$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].text}}</div><div class=qscore>{{$ctrl.qscore}}</div><div class=answer-col-container><ul class=answers><li ng-repeat=\"answer in $ctrl.ff($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+1}}</div></li></ul><ul class=answers ng-show=\"$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers.length>5\"><li ng-repeat=\"answer in $ctrl.lf($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+6}}</div></li></ul></div><div class=x-container><img src=assets/images/x.png ng-repeat=\"x in $ctrl.arr($ctrl.xs) track by $index\"></div></div><div class=fast-money ng-if=\"$ctrl.games[$ctrl.gameI].type == 'fast-money'\">FAST MONEY<div class=fast-round ng-repeat=\"b in [0,1]\"><input ng-repeat-start=\"a in [0,1,2,3,4]\"> <input ng-model=$ctrl.fms[b][a]><br ng-repeat-end>{{$ctrl.sum($ctrl.fms[b])}}</div>{{$ctrl.sum($ctrl.fms[0])+$ctrl.sum($ctrl.fms[1])}}</div><!--controls for game, x, teams...--><div class=controls><div class=team ng-click=$ctrl.scoreTo(0)><span ng-click=$ctrl.rotateAv(0)>TEAM {{$ctrl.av[0] | uppercase}}: {{$ctrl.scores[0]}}</span> <img ng-src=assets/images/{{$ctrl.av[0]}}.png></div><button ng-click=$ctrl.prevQ()>Prev Q</button> <button ng-click=$ctrl.nextQ()>Next Q</button> <button ng-click=$ctrl.x()>BUZZ</button> <button ng-click=$ctrl.clear()>Clear</button> <button ng-click=$ctrl.prevGame()>Prev Game</button> <button ng-click=$ctrl.nextGame()>Next Game</button><div class=team ng-click=$ctrl.scoreTo(1)><span ng-click=$ctrl.rotateAv(1)>TEAM {{$ctrl.av[1] | uppercase}}: {{$ctrl.scores[1]}}</span> <img ng-src=assets/images/{{$ctrl.av[1]}}.png></div></div>"
   );
 
 

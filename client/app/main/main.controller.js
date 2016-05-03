@@ -6,6 +6,19 @@
 
     constructor() {
 
+      let avs = ['bernie','hillary','trump','bibi'];
+
+      this.av = ['trump','bibi'];
+      this.rotateAv = n=> {
+	let c = avs.indexOf(this.av[n]);
+	let c2 = avs.indexOf(this.av[(n+1)%2]);
+
+	if((c+1)%avs.length === c2) c = (c+2)%avs.length;
+	else c = (c+1)%avs.length;
+
+	this.av[n] = avs[c];
+      };
+
       this.sum = arr => arr.reduce((p,c)=>p+1*c,0);
 
       let ding = new Audio('assets/audio/ding.mp3');
@@ -63,6 +76,11 @@
 	this.xs += 1;
 	buzz.play();
       };
+
+      this.clear = ()=> {
+	this.xs = 0;
+	this.scores = [0,0];
+      }
 
       this.games = [
 	{

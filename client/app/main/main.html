@@ -1,3 +1,7 @@
+<div ng-if="$ctrl.gameI == -1" class="logo">
+  <img src="assets/images/logo.png">
+</div>
+
 <div ng-if="$ctrl.games[$ctrl.gameI].type == 'questions'">
   <div class="question-text">
     {{$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].text}}
@@ -65,20 +69,25 @@
 <!--controls for game, x, teams...-->
 <div class="controls">
   <div class="team" ng-click="$ctrl.scoreTo(0)">
-    TEAM TRUMP: {{$ctrl.scores[0]}}
-    <img src="assets/images/trump.png">
+    <span ng-click="$ctrl.rotateAv(0)">
+      TEAM {{$ctrl.av[0] | uppercase}}: {{$ctrl.scores[0]}}
+    </span>
+    <img ng-src="assets/images/{{$ctrl.av[0]}}.png">
   </div>
 
   <button ng-click="$ctrl.prevQ()">Prev Q</button>
   <button ng-click="$ctrl.nextQ()">Next Q</button>
   
-  <button ng-click="$ctrl.x()">X</button>
+  <button ng-click="$ctrl.x()">BUZZ</button>
+  <button ng-click="$ctrl.clear()">Clear</button>
 
   <button ng-click="$ctrl.prevGame()">Prev Game</button>
   <button ng-click="$ctrl.nextGame()">Next Game</button>
 
   <div class="team" ng-click="$ctrl.scoreTo(1)">
-    TEAM BIBI: {{$ctrl.scores[1]}}
-    <img src="assets/images/bibi.png">
+    <span ng-click="$ctrl.rotateAv(1)">
+      TEAM {{$ctrl.av[1] | uppercase}}: {{$ctrl.scores[1]}}
+    </span>
+    <img ng-src="assets/images/{{$ctrl.av[1]}}.png">
   </div>
 </div>

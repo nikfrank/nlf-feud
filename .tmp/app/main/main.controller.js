@@ -8,6 +8,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										_classCallCheck(this, MainController);
 
+										var avs = ['bernie', 'hillary', 'trump', 'bibi'];
+
+										this.av = ['trump', 'bibi'];
+										this.rotateAv = function (n) {
+															var c = avs.indexOf(_this.av[n]);
+															var c2 = avs.indexOf(_this.av[(n + 1) % 2]);
+
+															if ((c + 1) % avs.length === c2) c = (c + 2) % avs.length;else c = (c + 1) % avs.length;
+
+															_this.av[n] = avs[c];
+										};
+
 										this.sum = function (arr) {
 															return arr.reduce(function (p, c) {
 																				return p + 1 * c;
@@ -75,6 +87,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.x = function () {
 															_this.xs += 1;
 															buzz.play();
+										};
+
+										this.clear = function () {
+															_this.xs = 0;
+															_this.scores = [0, 0];
 										};
 
 										this.games = [{
