@@ -7382,6 +7382,12 @@ ul.answers {
       height: 80%;
       width: auto; }
 
+.team-total {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%; }
+
 .fast-money {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7389,6 +7395,16 @@ ul.answers {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
+  .fast-money .player-total {
+    height: 40px;
+    width: 60px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: 2px inset white;
+    float: right;
+    margin-right: 17px;
+    text-align: right; }
   .fast-money .fast-round {
     width: 40vw;
     margin: 0 auto;
@@ -7400,7 +7416,8 @@ ul.answers {
       margin: 5px;
       font-size: 25px; }
       .fast-money .fast-round input + input {
-        width: 40px; }
+        width: 40px;
+        text-align: right; }
 
 footer.footer {
   text-align: center;

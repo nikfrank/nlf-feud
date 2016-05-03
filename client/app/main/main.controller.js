@@ -26,7 +26,6 @@
 
       this.reveal = answer=>{
 	if(answer.show) return;
-	// play the ding
 	ding.play();
 
 	answer.show = true;
@@ -42,8 +41,16 @@
       this.lf = a=> (a||[]).slice(5,10);
 
       this.scoreTo = teamI=>{
-	this.scores[teamI] += this.qscore;
-	this.qscore = 0;
+	if(this.games[this.gameI].type === 'questions'){
+	  this.scores[teamI] += this.qscore;
+	  this.qscore = 0;
+	}else{
+	  if(this.sum(this.fms[0])+this.sum(this.fms[1]) > 199){
+	    this.win = 'TEAM ' + this.av[teamI].toUpperCase() + ' WINS';
+	  }else{
+	    this.win = 'TEAM ' + this.av[teamI].toUpperCase() + ' LOSES';
+	  }
+	}
       };
 
       this.gameI = -1;
@@ -51,12 +58,16 @@
       this.prevGame = ()=> {
 	this.gameI = Math.max(0,this.gameI-1);
 	this.qI = 0;
+	this.win = '';
+	if(this.games[this.gameI].type === 'questions') this.clear();
       };
 
       this.nextGame = ()=> {
 	this.gameI = Math.min(this.games.length-1,this.gameI+1);
 	this.qI = 0;
 	this.fms = [[],[]];
+	this.win = '';
+	if(this.games[this.gameI].type === 'questions') this.clear();
       };
 
       this.prevQ = ()=> {

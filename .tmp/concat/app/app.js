@@ -54,7 +54,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										this.reveal = function (answer) {
 															if (answer.show) return;
-															// play the ding
 															ding.play();
 
 															answer.show = true;
@@ -78,8 +77,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										};
 
 										this.scoreTo = function (teamI) {
-															_this.scores[teamI] += _this.qscore;
-															_this.qscore = 0;
+															if (_this.games[_this.gameI].type === 'questions') {
+																				_this.scores[teamI] += _this.qscore;
+																				_this.qscore = 0;
+															} else {
+																				if (_this.sum(_this.fms[0]) + _this.sum(_this.fms[1]) > 199) {
+																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' WINS';
+																				} else {
+																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' LOSES';
+																				}
+															}
 										};
 
 										this.gameI = -1;
@@ -87,12 +94,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.prevGame = function () {
 															_this.gameI = Math.max(0, _this.gameI - 1);
 															_this.qI = 0;
+															_this.win = '';
+															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
 										this.nextGame = function () {
 															_this.gameI = Math.min(_this.games.length - 1, _this.gameI + 1);
 															_this.qI = 0;
 															_this.fms = [[], []];
+															_this.win = '';
+															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
 										this.prevQ = function () {
@@ -354,7 +365,7 @@ angular.module('feudApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('app/main/main.html',
-    "<div ng-if=\"$ctrl.gameI == -1\" class=logo><img src=assets/images/logo.png></div><div ng-if=\"$ctrl.games[$ctrl.gameI].type == 'questions'\"><div class=question-text>{{$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].text}}</div><div class=qscore>{{$ctrl.qscore}}</div><div class=answer-col-container><ul class=answers><li ng-repeat=\"answer in $ctrl.ff($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+1}}</div></li></ul><ul class=answers ng-show=\"$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers.length>5\"><li ng-repeat=\"answer in $ctrl.lf($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+6}}</div></li></ul></div><div class=x-container><img src=assets/images/x.png ng-repeat=\"x in $ctrl.arr($ctrl.xs) track by $index\"></div></div><div class=fast-money ng-if=\"$ctrl.games[$ctrl.gameI].type == 'fast-money'\">FAST MONEY<div class=fast-round ng-repeat=\"b in [0,1]\"><input ng-repeat-start=\"a in [0,1,2,3,4]\"> <input ng-model=$ctrl.fms[b][a]><br ng-repeat-end>{{$ctrl.sum($ctrl.fms[b])}}</div>{{$ctrl.sum($ctrl.fms[0])+$ctrl.sum($ctrl.fms[1])}}</div><!--controls for game, x, teams...--><div class=controls><div class=team ng-click=$ctrl.scoreTo(0)><span ng-click=$ctrl.rotateAv(0)>TEAM {{$ctrl.av[0] | uppercase}}: {{$ctrl.scores[0]}}</span> <img ng-src=assets/images/{{$ctrl.av[0]}}.png></div><button ng-click=$ctrl.prevQ()>Prev Q</button> <button ng-click=$ctrl.nextQ()>Next Q</button> <button ng-click=$ctrl.x()>BUZZ</button> <button ng-click=$ctrl.clear()>Clear</button> <button ng-click=$ctrl.prevGame()>Prev Game</button> <button ng-click=$ctrl.nextGame()>Next Game</button><div class=team ng-click=$ctrl.scoreTo(1)><span ng-click=$ctrl.rotateAv(1)>TEAM {{$ctrl.av[1] | uppercase}}: {{$ctrl.scores[1]}}</span> <img ng-src=assets/images/{{$ctrl.av[1]}}.png></div></div>"
+    "<div ng-if=\"$ctrl.gameI == -1\" class=logo><img src=assets/images/logo.png></div><div ng-if=\"$ctrl.games[$ctrl.gameI].type == 'questions'\"><div class=question-text>{{$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].text}}</div><div class=qscore>{{$ctrl.qscore}}</div><div class=answer-col-container><ul class=answers><li ng-repeat=\"answer in $ctrl.ff($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+1}}</div></li></ul><ul class=answers ng-show=\"$ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers.length>5\"><li ng-repeat=\"answer in $ctrl.lf($ctrl.games[$ctrl.gameI].questions[$ctrl.qI].answers)\" ng-click=$ctrl.reveal(answer)><div ng-show=answer.show><span class=answer-text>{{answer.text}}</span> <span class=answer-value>{{answer.value}}</span></div><div ng-hide=answer.show>{{$index+6}}</div></li></ul></div><div class=x-container><img src=assets/images/x.png ng-repeat=\"x in $ctrl.arr($ctrl.xs) track by $index\"></div></div><div ng-if=\"$ctrl.games[$ctrl.gameI].type == 'fast-money'\"><h1>FAST MONEY</h1><div class=fast-money><div class=fast-round ng-repeat=\"b in [0,1]\"><input ng-repeat-start=\"a in [0,1,2,3,4]\"> <input ng-model=$ctrl.fms[b][a]><br ng-repeat-end><div class=player-total>{{$ctrl.sum($ctrl.fms[b])}}</div></div></div><hr><div class=team-total>{{$ctrl.win}}</div></div><!--controls for game, x, teams...--><div class=controls><div class=team ng-click=$ctrl.scoreTo(0)><span ng-click=$ctrl.rotateAv(0)>TEAM {{$ctrl.av[0] | uppercase}}: {{$ctrl.scores[0]}}</span> <img ng-src=assets/images/{{$ctrl.av[0]}}.png></div><button ng-click=$ctrl.prevQ()>Prev Q</button> <button ng-click=$ctrl.nextQ()>Next Q</button> <button ng-click=$ctrl.x()>BUZZ</button> <button ng-click=$ctrl.clear()>Clear</button> <button ng-click=$ctrl.prevGame()>Prev Game</button> <button ng-click=$ctrl.nextGame()>Next Game</button><div class=team ng-click=$ctrl.scoreTo(1)><span ng-click=$ctrl.rotateAv(1)>TEAM {{$ctrl.av[1] | uppercase}}: {{$ctrl.scores[1]}}</span> <img ng-src=assets/images/{{$ctrl.av[1]}}.png></div></div>"
   );
 
 

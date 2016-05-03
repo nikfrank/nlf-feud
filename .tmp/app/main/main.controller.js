@@ -31,7 +31,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										this.reveal = function (answer) {
 															if (answer.show) return;
-															// play the ding
 															ding.play();
 
 															answer.show = true;
@@ -55,8 +54,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										};
 
 										this.scoreTo = function (teamI) {
-															_this.scores[teamI] += _this.qscore;
-															_this.qscore = 0;
+															if (_this.games[_this.gameI].type === 'questions') {
+																				_this.scores[teamI] += _this.qscore;
+																				_this.qscore = 0;
+															} else {
+																				if (_this.sum(_this.fms[0]) + _this.sum(_this.fms[1]) > 199) {
+																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' WINS';
+																				} else {
+																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' LOSES';
+																				}
+															}
 										};
 
 										this.gameI = -1;
@@ -64,12 +71,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.prevGame = function () {
 															_this.gameI = Math.max(0, _this.gameI - 1);
 															_this.qI = 0;
+															_this.win = '';
+															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
 										this.nextGame = function () {
 															_this.gameI = Math.min(_this.games.length - 1, _this.gameI + 1);
 															_this.qI = 0;
 															_this.fms = [[], []];
+															_this.win = '';
+															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
 										this.prevQ = function () {

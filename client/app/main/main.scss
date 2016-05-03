@@ -84,10 +84,28 @@ ul.answers{
   }
 }
 
+.team-total {
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+  width:100%;
+}
 
 .fast-money {
   display:flex;
   justify-content:space-around;
+
+  .player-total {
+    height:40px;
+    width:60px;
+    background-color:black;
+    color:white;
+    font-size:25px;
+    border: 2px inset white;
+    float:right;
+    margin-right:17px;
+    text-align:right;
+  }
 
   .fast-round {
     width:40vw;
@@ -103,6 +121,7 @@ ul.answers{
 
       + input {
 	width: 40px;
+	text-align:right;
       }
     }
   }

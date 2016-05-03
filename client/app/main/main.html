@@ -53,15 +53,22 @@
   </div>
 </div>
 
-<div class="fast-money" ng-if="$ctrl.games[$ctrl.gameI].type == 'fast-money'">
-  FAST MONEY
-  <div class="fast-round" ng-repeat="b in [0,1]">
-    <input ng-repeat-start="a in [0,1,2,3,4]">
-    <input ng-model="$ctrl.fms[b][a]">
-    <br ng-repeat-end>
-    {{$ctrl.sum($ctrl.fms[b])}}
+<div ng-if="$ctrl.games[$ctrl.gameI].type == 'fast-money'">
+  <h1>FAST MONEY</h1>
+  <div class="fast-money">
+    <div class="fast-round" ng-repeat="b in [0,1]">
+      <input ng-repeat-start="a in [0,1,2,3,4]">
+      <input ng-model="$ctrl.fms[b][a]">
+      <br ng-repeat-end>
+      <div class="player-total">
+	{{$ctrl.sum($ctrl.fms[b])}}
+      </div>
+    </div>
   </div>
-  {{$ctrl.sum($ctrl.fms[0])+$ctrl.sum($ctrl.fms[1])}}
+  <hr>
+  <div class="team-total">
+    {{$ctrl.win}}
+  </div>
 </div>
 
 
