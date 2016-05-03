@@ -50,15 +50,16 @@
 </div>
 
 
-<div class="x-container">
-  <img src="assets/images/x.png" ng-repeat="x in $ctrl.arr($ctrl.xs) track by $index">
-</div>
 
 <div ng-if="$ctrl.games[$ctrl.gameI].type == 'fast-money'">
-  <h1>FAST MONEY</h1>
+  <h1>FAST MONEY - - - 
+    <button ng-click="$ctrl.toggleHideFM()">
+      {{$ctrl.hideFM? 'show':'hide'}}
+    </button>
+  </h1>
   <div class="fast-money">
     <div class="fast-round" ng-repeat="b in [0,1]">
-      <input ng-repeat-start="a in [0,1,2,3,4]">
+      <input ng-repeat-start="a in [0,1,2,3,4]" ng-class="{hidefm:$ctrl.hideFM}">
       <input ng-model="$ctrl.fms[b][a]">
       <br ng-repeat-end>
       <div class="player-total">
@@ -67,12 +68,16 @@
     </div>
   </div>
   <hr>
-  <div class="team-total">
+  <div class="team-total" ng-click="$ctrl.win = ''">
     {{$ctrl.win}}
   </div>
 </div>
 
 
+
+<div class="x-container">
+  <img src="assets/images/x.png" ng-repeat="x in $ctrl.arr($ctrl.xs) track by $index">
+</div>
 
 <!--controls for game, x, teams...-->
 <div class="controls">

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\ui-router\ui-router.mock.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/ui-router/</a> ui-router.mock.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('stateMock', []);
+angular.module('stateMock').service('$state', function ($q) {
+    this.expectedTransitions = [];
+&nbsp;
+    this.transitionTo = <span class="fstat-no" title="function not covered" >function (stateName) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.expectedTransitions.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            var expectedState = this.expectedTransitions.shift();</span>
+<span class="cstat-no" title="statement not covered" >            if (expectedState !== stateName) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error('Expected transition to state: ' + expectedState + ' but transitioned to ' + stateName);</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            throw Error('No more transitions were expected! Tried to transition to ' + stateName);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        console.log('Mock transition to: ' + stateName);</span>
+<span class="cstat-no" title="statement not covered" >        var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >        var promise = deferred.promise;</span>
+<span class="cstat-no" title="statement not covered" >        deferred.resolve();</span>
+<span class="cstat-no" title="statement not covered" >        return promise;</span>
+    };
+&nbsp;
+    this.go = this.transitionTo;
+&nbsp;
+    this.expectTransitionTo = <span class="fstat-no" title="function not covered" >function (stateName) {</span>
+<span class="cstat-no" title="statement not covered" >        this.expectedTransitions.push(stateName);</span>
+    };
+&nbsp;
+    this.ensureAllTransitionsHappened = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.expectedTransitions.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            throw Error('Not all transitions happened!');</span>
+        }
+    };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L1VzZXJzL2R1a2UvY29kZS9mZXVkL2NsaWVudC9jb21wb25lbnRzL3VpLXJvdXRlci91aS1yb3V0ZXIubW9jay5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7QUFFQSxRQUFRLE1BQVIsQ0FBZSxXQUFmLEVBQTRCLEVBQTVCO0FBQ0EsUUFBUSxNQUFSLENBQWUsV0FBZixFQUE0QixPQUE1QixDQUFvQyxRQUFwQyxFQUE4QyxVQUFTLEVBQVQsRUFBYTtBQUN2RCxTQUFLLG1CQUFMLEdBQTJCLEVBQTNCOztBQUVBLFNBQUssWUFBTCxHQUFvQixVQUFTLFNBQVQsRUFBb0I7QUFDcEMsWUFBSSxLQUFLLG1CQUFMLENBQXlCLE1BQXpCLEdBQWtDLENBQXRDLEVBQXlDO0FBQ3JDLGdCQUFJLGdCQUFnQixLQUFLLG1CQUFMLENBQXlCLEtBQXpCLEVBQXBCO0FBQ0EsZ0JBQUksa0JBQWtCLFNBQXRCLEVBQWlDO0FBQzdCLHNCQUFNLE1BQU0sbUNBQW1DLGFBQW5DLEdBQW1ELHVCQUFuRCxHQUE2RSxTQUFuRixDQUFOO0FBQ0g7QUFDSixTQUxELE1BS087QUFDSCxrQkFBTSxNQUFNLCtEQUErRCxTQUFyRSxDQUFOO0FBQ0g7QUFDRCxnQkFBUSxHQUFSLENBQVkseUJBQXlCLFNBQXJDO0FBQ0EsWUFBSSxXQUFXLEdBQUcsS0FBSCxFQUFmO0FBQ0EsWUFBSSxVQUFVLFNBQVMsT0FBdkI7QUFDQSxpQkFBUyxPQUFUO0FBQ0EsZUFBTyxPQUFQO0FBQ0gsS0FkRDs7QUFnQkEsU0FBSyxFQUFMLEdBQVUsS0FBSyxZQUFmOztBQUVBLFNBQUssa0JBQUwsR0FBMEIsVUFBUyxTQUFULEVBQW9CO0FBQzFDLGFBQUssbUJBQUwsQ0FBeUIsSUFBekIsQ0FBOEIsU0FBOUI7QUFDSCxLQUZEOztBQUlBLFNBQUssNEJBQUwsR0FBb0MsWUFBVztBQUMzQyxZQUFJLEtBQUssbUJBQUwsQ0FBeUIsTUFBekIsR0FBa0MsQ0FBdEMsRUFBeUM7QUFDckMsa0JBQU0sTUFBTSwrQkFBTixDQUFOO0FBQ0g7QUFDSixLQUpEO0FBS0gsQ0E5QkQiLCJmaWxlIjoidWktcm91dGVyLm1vY2suZXM1LmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5hbmd1bGFyLm1vZHVsZSgnc3RhdGVNb2NrJywgW10pO1xuYW5ndWxhci5tb2R1bGUoJ3N0YXRlTW9jaycpLnNlcnZpY2UoJyRzdGF0ZScsIGZ1bmN0aW9uKCRxKSB7XG4gICAgdGhpcy5leHBlY3RlZFRyYW5zaXRpb25zID0gW107XG5cbiAgICB0aGlzLnRyYW5zaXRpb25UbyA9IGZ1bmN0aW9uKHN0YXRlTmFtZSkge1xuICAgICAgICBpZiAodGhpcy5leHBlY3RlZFRyYW5zaXRpb25zLmxlbmd0aCA+IDApIHtcbiAgICAgICAgICAgIHZhciBleHBlY3RlZFN0YXRlID0gdGhpcy5leHBlY3RlZFRyYW5zaXRpb25zLnNoaWZ0KCk7XG4gICAgICAgICAgICBpZiAoZXhwZWN0ZWRTdGF0ZSAhPT0gc3RhdGVOYW1lKSB7XG4gICAgICAgICAgICAgICAgdGhyb3cgRXJyb3IoJ0V4cGVjdGVkIHRyYW5zaXRpb24gdG8gc3RhdGU6ICcgKyBleHBlY3RlZFN0YXRlICsgJyBidXQgdHJhbnNpdGlvbmVkIHRvICcgKyBzdGF0ZU5hbWUpO1xuICAgICAgICAgICAgfVxuICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgdGhyb3cgRXJyb3IoJ05vIG1vcmUgdHJhbnNpdGlvbnMgd2VyZSBleHBlY3RlZCEgVHJpZWQgdG8gdHJhbnNpdGlvbiB0byAnICsgc3RhdGVOYW1lKTtcbiAgICAgICAgfVxuICAgICAgICBjb25zb2xlLmxvZygnTW9jayB0cmFuc2l0aW9uIHRvOiAnICsgc3RhdGVOYW1lKTtcbiAgICAgICAgdmFyIGRlZmVycmVkID0gJHEuZGVmZXIoKTtcbiAgICAgICAgdmFyIHByb21pc2UgPSBkZWZlcnJlZC5wcm9taXNlO1xuICAgICAgICBkZWZlcnJlZC5yZXNvbHZlKCk7XG4gICAgICAgIHJldHVybiBwcm9taXNlO1xuICAgIH07XG5cbiAgICB0aGlzLmdvID0gdGhpcy50cmFuc2l0aW9uVG87XG5cbiAgICB0aGlzLmV4cGVjdFRyYW5zaXRpb25UbyA9IGZ1bmN0aW9uKHN0YXRlTmFtZSkge1xuICAgICAgICB0aGlzLmV4cGVjdGVkVHJhbnNpdGlvbnMucHVzaChzdGF0ZU5hbWUpO1xuICAgIH07XG5cbiAgICB0aGlzLmVuc3VyZUFsbFRyYW5zaXRpb25zSGFwcGVuZWQgPSBmdW5jdGlvbigpIHtcbiAgICAgICAgaWYgKHRoaXMuZXhwZWN0ZWRUcmFuc2l0aW9ucy5sZW5ndGggPiAwKSB7XG4gICAgICAgICAgICB0aHJvdyBFcnJvcignTm90IGFsbCB0cmFuc2l0aW9ucyBoYXBwZW5lZCEnKTtcbiAgICAgICAgfVxuICAgIH07XG59KTtcbiJdfQ==</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 03 2016 22:00:19 GMT+0300 (Jerusalem Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

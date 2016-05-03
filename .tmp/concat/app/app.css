@@ -7374,7 +7374,10 @@ ul.answers {
   display: flex;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
-          justify-content: space-around; }
+          justify-content: space-around;
+  pointer-events: none; }
+  .controls * {
+    pointer-events: auto; }
   .controls .team {
     height: 160px;
     width: 120px; }
@@ -7415,6 +7418,8 @@ ul.answers {
       height: 40px;
       margin: 5px;
       font-size: 25px; }
+      .fast-money .fast-round input.hidefm {
+        color: black; }
       .fast-money .fast-round input + input {
         width: 40px;
         text-align: right; }

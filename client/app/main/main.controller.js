@@ -58,7 +58,6 @@
       this.prevGame = ()=> {
 	this.gameI = Math.max(0,this.gameI-1);
 	this.qI = 0;
-	this.win = '';
 	if(this.games[this.gameI].type === 'questions') this.clear();
       };
 
@@ -66,7 +65,6 @@
 	this.gameI = Math.min(this.games.length-1,this.gameI+1);
 	this.qI = 0;
 	this.fms = [[],[]];
-	this.win = '';
 	if(this.games[this.gameI].type === 'questions') this.clear();
       };
 
@@ -91,7 +89,11 @@
       this.clear = ()=> {
 	this.xs = 0;
 	this.scores = [0,0];
-      }
+	this.win = '';
+	this.hideFM = false;
+      };
+
+      this.toggleHideFM = ()=> (this.hideFM = !this.hideFM);
 
       this.games = [
 	{

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\util\util.service.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/util/</a> util.service.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+(function () {
+&nbsp;
+  /**
+   * The Util service is for thin, globally reusable, utility functions
+   */
+<span class="fstat-no" title="function not covered" >  function UtilService($window) {</span>
+<span class="cstat-no" title="statement not covered" >    var Util = {</span>
+      /**
+       * Return a callback or noop function
+       *
+       * @param  {Function|*} cb - a 'potential' function
+       * @return {Function}
+       */
+&nbsp;
+      safeCb: <span class="fstat-no" title="function not covered" >function safeCb(cb) {</span>
+<span class="cstat-no" title="statement not covered" >        return angular.isFunction(cb) ? cb : angular.noop;</span>
+      },
+&nbsp;
+&nbsp;
+      /**
+       * Parse a given url with the use of an anchor element
+       *
+       * @param  {String} url - the url to parse
+       * @return {Object}     - the parsed url, anchor element
+       */
+      urlParse: <span class="fstat-no" title="function not covered" >function urlParse(url) {</span>
+<span class="cstat-no" title="statement not covered" >        var a = document.createElement('a');</span>
+<span class="cstat-no" title="statement not covered" >        a.href = url;</span>
+&nbsp;
+        // Special treatment for IE, see http://stackoverflow.com/a/13405933 for details
+<span class="cstat-no" title="statement not covered" >        if (a.host === '') {</span>
+<span class="cstat-no" title="statement not covered" >          a.href = a.href;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return a;</span>
+      },
+&nbsp;
+&nbsp;
+      /**
+       * Test whether or not a given url is same origin
+       *
+       * @param  {String}           url       - url to test
+       * @param  {String|String[]}  [origins] - additional origins to test against
+       * @return {Boolean}                    - true if url is same origin
+       */
+      isSameOrigin: <span class="fstat-no" title="function not covered" >function isSameOrigin(url, origins) {</span>
+<span class="cstat-no" title="statement not covered" >        url = Util.urlParse(url);</span>
+<span class="cstat-no" title="statement not covered" >        origins = origins &amp;&amp; [].concat(origins) || [];</span>
+<span class="cstat-no" title="statement not covered" >        origins = origins.map(Util.urlParse);</span>
+<span class="cstat-no" title="statement not covered" >        origins.push($window.location);</span>
+<span class="cstat-no" title="statement not covered" >        origins = origins.filter(<span class="fstat-no" title="function not covered" >function (o) {</span></span>
+<span class="cstat-no" title="statement not covered" >          return url.hostname === o.hostname &amp;&amp; url.port === o.port &amp;&amp; url.protocol === o.protocol;</span>
+        });
+<span class="cstat-no" title="statement not covered" >        return origins.length &gt;= 1;</span>
+      }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Util;</span>
+  }
+&nbsp;
+  angular.module('feudApp.util').factory('Util', UtilService);
+})();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L1VzZXJzL2R1a2UvY29kZS9mZXVkL2NsaWVudC9jb21wb25lbnRzL3V0aWwvdXRpbC5zZXJ2aWNlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBLENBQUMsWUFBVzs7Ozs7QUFLWixXQUFTLFdBQVQsQ0FBcUIsT0FBckIsRUFBOEI7QUFDNUIsUUFBSSxPQUFPOzs7Ozs7OztBQU9ULFlBUFMsa0JBT0YsRUFQRSxFQU9FO0FBQ1QsZUFBUSxRQUFRLFVBQVIsQ0FBbUIsRUFBbkIsQ0FBRCxHQUEyQixFQUEzQixHQUFnQyxRQUFRLElBQS9DO0FBQ0QsT0FUUTs7Ozs7Ozs7O0FBaUJULGNBakJTLG9CQWlCQSxHQWpCQSxFQWlCSztBQUNaLFlBQUksSUFBSSxTQUFTLGFBQVQsQ0FBdUIsR0FBdkIsQ0FBUjtBQUNBLFVBQUUsSUFBRixHQUFTLEdBQVQ7OztBQUdBLFlBQUksRUFBRSxJQUFGLEtBQVcsRUFBZixFQUFtQjtBQUNqQixZQUFFLElBQUYsR0FBUyxFQUFFLElBQVg7QUFDRDs7QUFFRCxlQUFPLENBQVA7QUFDRCxPQTNCUTs7Ozs7Ozs7OztBQW9DVCxrQkFwQ1Msd0JBb0NJLEdBcENKLEVBb0NTLE9BcENULEVBb0NrQjtBQUN6QixjQUFNLEtBQUssUUFBTCxDQUFjLEdBQWQsQ0FBTjtBQUNBLGtCQUFXLFdBQVcsR0FBRyxNQUFILENBQVUsT0FBVixDQUFaLElBQW1DLEVBQTdDO0FBQ0Esa0JBQVUsUUFBUSxHQUFSLENBQVksS0FBSyxRQUFqQixDQUFWO0FBQ0EsZ0JBQVEsSUFBUixDQUFhLFFBQVEsUUFBckI7QUFDQSxrQkFBVSxRQUFRLE1BQVIsQ0FBZSxVQUFTLENBQVQsRUFBWTtBQUNuQyxpQkFBTyxJQUFJLFFBQUosS0FBaUIsRUFBRSxRQUFuQixJQUNMLElBQUksSUFBSixLQUFhLEVBQUUsSUFEVixJQUVMLElBQUksUUFBSixLQUFpQixFQUFFLFFBRnJCO0FBR0QsU0FKUyxDQUFWO0FBS0EsZUFBUSxRQUFRLE1BQVIsSUFBa0IsQ0FBMUI7QUFDRDtBQS9DUSxLQUFYOztBQWtEQSxXQUFPLElBQVA7QUFDRDs7QUFFRCxVQUFRLE1BQVIsQ0FBZSxjQUFmLEVBQ0csT0FESCxDQUNXLE1BRFgsRUFDbUIsV0FEbkI7QUFHQyxDQTlERCIsImZpbGUiOiJ1dGlsLnNlcnZpY2UuZXM1LmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG4oZnVuY3Rpb24oKSB7XG5cbi8qKlxuICogVGhlIFV0aWwgc2VydmljZSBpcyBmb3IgdGhpbiwgZ2xvYmFsbHkgcmV1c2FibGUsIHV0aWxpdHkgZnVuY3Rpb25zXG4gKi9cbmZ1bmN0aW9uIFV0aWxTZXJ2aWNlKCR3aW5kb3cpIHtcbiAgdmFyIFV0aWwgPSB7XG4gICAgLyoqXG4gICAgICogUmV0dXJuIGEgY2FsbGJhY2sgb3Igbm9vcCBmdW5jdGlvblxuICAgICAqXG4gICAgICogQHBhcmFtICB7RnVuY3Rpb258Kn0gY2IgLSBhICdwb3RlbnRpYWwnIGZ1bmN0aW9uXG4gICAgICogQHJldHVybiB7RnVuY3Rpb259XG4gICAgICovXG4gICAgc2FmZUNiKGNiKSB7XG4gICAgICByZXR1cm4gKGFuZ3VsYXIuaXNGdW5jdGlvbihjYikpID8gY2IgOiBhbmd1bGFyLm5vb3A7XG4gICAgfSxcblxuICAgIC8qKlxuICAgICAqIFBhcnNlIGEgZ2l2ZW4gdXJsIHdpdGggdGhlIHVzZSBvZiBhbiBhbmNob3IgZWxlbWVudFxuICAgICAqXG4gICAgICogQHBhcmFtICB7U3RyaW5nfSB1cmwgLSB0aGUgdXJsIHRvIHBhcnNlXG4gICAgICogQHJldHVybiB7T2JqZWN0fSAgICAgLSB0aGUgcGFyc2VkIHVybCwgYW5jaG9yIGVsZW1lbnRcbiAgICAgKi9cbiAgICB1cmxQYXJzZSh1cmwpIHtcbiAgICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpO1xuICAgICAgYS5ocmVmID0gdXJsO1xuXG4gICAgICAvLyBTcGVjaWFsIHRyZWF0bWVudCBmb3IgSUUsIHNlZSBodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vYS8xMzQwNTkzMyBmb3IgZGV0YWlsc1xuICAgICAgaWYgKGEuaG9zdCA9PT0gJycpIHtcbiAgICAgICAgYS5ocmVmID0gYS5ocmVmO1xuICAgICAgfVxuXG4gICAgICByZXR1cm4gYTtcbiAgICB9LFxuXG4gICAgLyoqXG4gICAgICogVGVzdCB3aGV0aGVyIG9yIG5vdCBhIGdpdmVuIHVybCBpcyBzYW1lIG9yaWdpblxuICAgICAqXG4gICAgICogQHBhcmFtICB7U3RyaW5nfSAgICAgICAgICAgdXJsICAgICAgIC0gdXJsIHRvIHRlc3RcbiAgICAgKiBAcGFyYW0gIHtTdHJpbmd8U3RyaW5nW119ICBbb3JpZ2luc10gLSBhZGRpdGlvbmFsIG9yaWdpbnMgdG8gdGVzdCBhZ2FpbnN0XG4gICAgICogQHJldHVybiB7Qm9vbGVhbn0gICAgICAgICAgICAgICAgICAgIC0gdHJ1ZSBpZiB1cmwgaXMgc2FtZSBvcmlnaW5cbiAgICAgKi9cbiAgICBpc1NhbWVPcmlnaW4odXJsLCBvcmlnaW5zKSB7XG4gICAgICB1cmwgPSBVdGlsLnVybFBhcnNlKHVybCk7XG4gICAgICBvcmlnaW5zID0gKG9yaWdpbnMgJiYgW10uY29uY2F0KG9yaWdpbnMpKSB8fCBbXTtcbiAgICAgIG9yaWdpbnMgPSBvcmlnaW5zLm1hcChVdGlsLnVybFBhcnNlKTtcbiAgICAgIG9yaWdpbnMucHVzaCgkd2luZG93LmxvY2F0aW9uKTtcbiAgICAgIG9yaWdpbnMgPSBvcmlnaW5zLmZpbHRlcihmdW5jdGlvbihvKSB7XG4gICAgICAgIHJldHVybiB1cmwuaG9zdG5hbWUgPT09IG8uaG9zdG5hbWUgJiZcbiAgICAgICAgICB1cmwucG9ydCA9PT0gby5wb3J0ICYmXG4gICAgICAgICAgdXJsLnByb3RvY29sID09PSBvLnByb3RvY29sO1xuICAgICAgfSk7XG4gICAgICByZXR1cm4gKG9yaWdpbnMubGVuZ3RoID49IDEpO1xuICAgIH1cbiAgfTtcblxuICByZXR1cm4gVXRpbDtcbn1cblxuYW5ndWxhci5tb2R1bGUoJ2ZldWRBcHAudXRpbCcpXG4gIC5mYWN0b3J5KCdVdGlsJywgVXRpbFNlcnZpY2UpO1xuXG59KSgpO1xuIl19</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 03 2016 22:00:19 GMT+0300 (Jerusalem Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\main\main.controller.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/main/</a> main.controller.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.12% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+describe('Component: mainComponent', function () {
+&nbsp;
+  // load the controller's module
+  beforeEach(module('feudApp'));
+  beforeEach(module('stateMock'));
+&nbsp;
+  var scope;
+  var mainComponent;
+  var state;
+  var $httpBackend;
+&nbsp;
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function (_$httpBackend_, $http, $componentController, $rootScope, $state) {
+    $httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('/api/things').respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+&nbsp;
+    scope = $rootScope.$new();
+    state = $state;
+    mainComponent = $componentController('main', {
+      $http: $http,
+      $scope: scope
+    });
+  }));
+&nbsp;
+  it('should attach a list of things to the controller', function () {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (mainComponent.$onInit) <span class="cstat-no" title="statement not covered" >mainComponent.$onInit();</span>
+    //$httpBackend.flush();
+    expect(mainComponent.av.length).toBe(2);
+  });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L1VzZXJzL2R1a2UvY29kZS9mZXVkL2NsaWVudC9hcHAvbWFpbi9tYWluLmNvbnRyb2xsZXIuc3BlYy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7QUFFQSxTQUFTLDBCQUFULEVBQXFDLFlBQVc7OztBQUc5QyxhQUFXLE9BQU8sU0FBUCxDQUFYO0FBQ0EsYUFBVyxPQUFPLFdBQVAsQ0FBWDs7QUFFQSxNQUFJLEtBQUo7QUFDQSxNQUFJLGFBQUo7QUFDQSxNQUFJLEtBQUo7QUFDQSxNQUFJLFlBQUo7OztBQUdBLGFBQVcsT0FBTyxVQUNoQixjQURnQixFQUVoQixLQUZnQixFQUdoQixvQkFIZ0IsRUFJaEIsVUFKZ0IsRUFLaEIsTUFMZ0IsRUFLUjtBQUNOLG1CQUFlLGNBQWY7QUFDQSxpQkFBYSxTQUFiLENBQXVCLGFBQXZCLEVBQ0csT0FESCxDQUNXLENBQUMsbUJBQUQsRUFBc0IsV0FBdEIsRUFBbUMsT0FBbkMsRUFBNEMsU0FBNUMsQ0FEWDs7QUFHQSxZQUFRLFdBQVcsSUFBWCxFQUFSO0FBQ0EsWUFBUSxNQUFSO0FBQ0Esb0JBQWdCLHFCQUFxQixNQUFyQixFQUE2QjtBQUMzQyxhQUFPLEtBRG9DO0FBRTNDLGNBQVE7QUFGbUMsS0FBN0IsQ0FBaEI7QUFJSCxHQWhCVSxDQUFYOztBQWtCQSxLQUFHLGtEQUFILEVBQXVELFlBQVc7QUFDaEUsUUFBRyxjQUFjLE9BQWpCLEVBQTBCLGNBQWMsT0FBZDs7QUFFMUIsV0FBTyxjQUFjLEVBQWQsQ0FBaUIsTUFBeEIsRUFBZ0MsSUFBaEMsQ0FBcUMsQ0FBckM7QUFDRCxHQUpEO0FBS0QsQ0FuQ0QiLCJmaWxlIjoibWFpbi5jb250cm9sbGVyLnNwZWMuZXM1LmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5kZXNjcmliZSgnQ29tcG9uZW50OiBtYWluQ29tcG9uZW50JywgZnVuY3Rpb24oKSB7XG5cbiAgLy8gbG9hZCB0aGUgY29udHJvbGxlcidzIG1vZHVsZVxuICBiZWZvcmVFYWNoKG1vZHVsZSgnZmV1ZEFwcCcpKTtcbiAgYmVmb3JlRWFjaChtb2R1bGUoJ3N0YXRlTW9jaycpKTtcblxuICB2YXIgc2NvcGU7XG4gIHZhciBtYWluQ29tcG9uZW50O1xuICB2YXIgc3RhdGU7XG4gIHZhciAkaHR0cEJhY2tlbmQ7XG5cbiAgLy8gSW5pdGlhbGl6ZSB0aGUgY29udHJvbGxlciBhbmQgYSBtb2NrIHNjb3BlXG4gIGJlZm9yZUVhY2goaW5qZWN0KGZ1bmN0aW9uKFxuICAgIF8kaHR0cEJhY2tlbmRfLFxuICAgICRodHRwLFxuICAgICRjb21wb25lbnRDb250cm9sbGVyLFxuICAgICRyb290U2NvcGUsXG4gICAgJHN0YXRlKSB7XG4gICAgICAkaHR0cEJhY2tlbmQgPSBfJGh0dHBCYWNrZW5kXztcbiAgICAgICRodHRwQmFja2VuZC5leHBlY3RHRVQoJy9hcGkvdGhpbmdzJylcbiAgICAgICAgLnJlc3BvbmQoWydIVE1MNSBCb2lsZXJwbGF0ZScsICdBbmd1bGFySlMnLCAnS2FybWEnLCAnRXhwcmVzcyddKTtcblxuICAgICAgc2NvcGUgPSAkcm9vdFNjb3BlLiRuZXcoKTtcbiAgICAgIHN0YXRlID0gJHN0YXRlO1xuICAgICAgbWFpbkNvbXBvbmVudCA9ICRjb21wb25lbnRDb250cm9sbGVyKCdtYWluJywge1xuICAgICAgICAkaHR0cDogJGh0dHAsXG4gICAgICAgICRzY29wZTogc2NvcGVcbiAgICAgIH0pO1xuICB9KSk7XG5cbiAgaXQoJ3Nob3VsZCBhdHRhY2ggYSBsaXN0IG9mIHRoaW5ncyB0byB0aGUgY29udHJvbGxlcicsIGZ1bmN0aW9uKCkge1xuICAgIGlmKG1haW5Db21wb25lbnQuJG9uSW5pdCkgbWFpbkNvbXBvbmVudC4kb25Jbml0KCk7XG4gICAgLy8kaHR0cEJhY2tlbmQuZmx1c2goKTtcbiAgICBleHBlY3QobWFpbkNvbXBvbmVudC5hdi5sZW5ndGgpLnRvQmUoMik7XG4gIH0pO1xufSk7XG4iXX0=</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 03 2016 22:00:19 GMT+0300 (Jerusalem Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

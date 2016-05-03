@@ -30,7 +30,7 @@ module.exports = function(config) {
 
     preprocessors: {
       '**/*.html': 'ng-html2js',
-      'client/{app,components}/**/*.js': 'babel'
+      'client/{app,components}/**/*.js': ['babel', 'coverage']
     },
 
     ngHtml2JsPreprocessor: {
@@ -66,7 +66,16 @@ module.exports = function(config) {
     // - junit
     // - growl
     // - coverage
-    reporters: ['spec'],
+    reporters: ['coverage'],
+    coverageReporter: {
+      // specify a common output directory 
+      dir: 'coverage',
+      reporters: [
+        // reporters not supporting the `file` property 
+        { type: 'html', subdir: 'report-html' },
+        { type: 'lcov', subdir: 'report-lcov' }
+      ]
+    },
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
@@ -79,7 +88,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

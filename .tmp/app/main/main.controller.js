@@ -71,7 +71,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.prevGame = function () {
 															_this.gameI = Math.max(0, _this.gameI - 1);
 															_this.qI = 0;
-															_this.win = '';
 															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
@@ -79,7 +78,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 															_this.gameI = Math.min(_this.games.length - 1, _this.gameI + 1);
 															_this.qI = 0;
 															_this.fms = [[], []];
-															_this.win = '';
 															if (_this.games[_this.gameI].type === 'questions') _this.clear();
 										};
 
@@ -103,6 +101,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 										this.clear = function () {
 															_this.xs = 0;
 															_this.scores = [0, 0];
+															_this.win = '';
+															_this.hideFM = false;
+										};
+
+										this.toggleHideFM = function () {
+															return _this.hideFM = !_this.hideFM;
 										};
 
 										this.games = [{

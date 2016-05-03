@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\main\main.controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/main/</a> main.controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.66% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>29/77</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.53% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.03% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>29/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+<span class="fstat-no" title="function not covered" >function _classCallCheck(instance, Constructor) {</span> <span class="cstat-no" title="statement not covered" >if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} </span>}
+&nbsp;
+(function () {
+					var MainController = function MainController() {
+										var _this = this;
+&nbsp;
+										_classCallCheck(this, MainController);
+&nbsp;
+										var avs = ['bernie', 'hillary', 'trump', 'bibi'];
+&nbsp;
+										this.av = ['trump', 'bibi'];
+										this.rotateAv = <span class="fstat-no" title="function not covered" >function (n) {</span>
+<span class="cstat-no" title="statement not covered" >															var c = avs.indexOf(_this.av[n]);</span>
+<span class="cstat-no" title="statement not covered" >															var c2 = avs.indexOf(_this.av[(n + 1) % 2]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >															if ((c + 1) % avs.length === c2) <span class="cstat-no" title="statement not covered" >c = (c + 2) % avs.length;e</span>lse <span class="cstat-no" title="statement not covered" >c = (c + 1) % avs.length;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >															_this.av[n] = avs[c];</span>
+										};
+&nbsp;
+										this.sum = <span class="fstat-no" title="function not covered" >function (arr) {</span>
+<span class="cstat-no" title="statement not covered" >															return arr.reduce(<span class="fstat-no" title="function not covered" >function (p, c) {</span></span>
+<span class="cstat-no" title="statement not covered" >																				return p + 1 * c;</span>
+															}, 0);
+										};
+&nbsp;
+										var ding = new Audio('assets/audio/ding.mp3');
+										var buzz = new Audio('assets/audio/buzz.mp3');
+&nbsp;
+										this.reveal = <span class="fstat-no" title="function not covered" >function (answer) {</span>
+<span class="cstat-no" title="statement not covered" >															if (answer.show) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >															ding.play();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >															answer.show = true;</span>
+<span class="cstat-no" title="statement not covered" >															if (_this.xs &lt; 3) <span class="cstat-no" title="statement not covered" >_this.qscore += answer.value;</span></span>
+										};
+&nbsp;
+										this.scores = [0, 0];
+										this.qscore = 0;
+										this.xs = 0;
+										this.arr = <span class="fstat-no" title="function not covered" >function (n) {</span>
+<span class="cstat-no" title="statement not covered" >															return Array.apply(null, new Array(n)).map(<span class="fstat-no" title="function not covered" >function (m) {</span></span>
+<span class="cstat-no" title="statement not covered" >																				return 1;</span>
+															});
+										};
+&nbsp;
+										this.ff = <span class="fstat-no" title="function not covered" >function (a) {</span>
+<span class="cstat-no" title="statement not covered" >															return (a || []).slice(0, 5);</span>
+										};
+										this.lf = <span class="fstat-no" title="function not covered" >function (a) {</span>
+<span class="cstat-no" title="statement not covered" >															return (a || []).slice(5, 10);</span>
+										};
+&nbsp;
+										this.scoreTo = <span class="fstat-no" title="function not covered" >function (teamI) {</span>
+<span class="cstat-no" title="statement not covered" >															if (_this.games[_this.gameI].type === 'questions') {</span>
+<span class="cstat-no" title="statement not covered" >																				_this.scores[teamI] += _this.qscore;</span>
+<span class="cstat-no" title="statement not covered" >																				_this.qscore = 0;</span>
+															} else {
+<span class="cstat-no" title="statement not covered" >																				if (_this.sum(_this.fms[0]) + _this.sum(_this.fms[1]) &gt; 199) {</span>
+<span class="cstat-no" title="statement not covered" >																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' WINS';</span>
+																				} else {
+<span class="cstat-no" title="statement not covered" >																									_this.win = 'TEAM ' + _this.av[teamI].toUpperCase() + ' LOSES';</span>
+																				}
+															}
+										};
+&nbsp;
+										this.gameI = -1;
+&nbsp;
+										this.prevGame = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.gameI = Math.max(0, _this.gameI - 1);</span>
+<span class="cstat-no" title="statement not covered" >															_this.qI = 0;</span>
+<span class="cstat-no" title="statement not covered" >															if (_this.games[_this.gameI].type === 'questions') <span class="cstat-no" title="statement not covered" >_this.clear();</span></span>
+										};
+&nbsp;
+										this.nextGame = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.gameI = Math.min(_this.games.length - 1, _this.gameI + 1);</span>
+<span class="cstat-no" title="statement not covered" >															_this.qI = 0;</span>
+<span class="cstat-no" title="statement not covered" >															_this.fms = [[], []];</span>
+<span class="cstat-no" title="statement not covered" >															if (_this.games[_this.gameI].type === 'questions') <span class="cstat-no" title="statement not covered" >_this.clear();</span></span>
+										};
+&nbsp;
+										this.prevQ = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.qI = Math.max(0, _this.qI - 1);</span>
+<span class="cstat-no" title="statement not covered" >															_this.qscore = 0;</span>
+<span class="cstat-no" title="statement not covered" >															_this.xs = 0;</span>
+										};
+&nbsp;
+										this.nextQ = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.qI = Math.min(_this.games[_this.gameI].questions.length - 1, _this.qI + 1);</span>
+<span class="cstat-no" title="statement not covered" >															_this.qscore = 0;</span>
+<span class="cstat-no" title="statement not covered" >															_this.xs = 0;</span>
+										};
+&nbsp;
+										this.x = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.xs += 1;</span>
+<span class="cstat-no" title="statement not covered" >															buzz.play();</span>
+										};
+&nbsp;
+										this.clear = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															_this.xs = 0;</span>
+<span class="cstat-no" title="statement not covered" >															_this.scores = [0, 0];</span>
+<span class="cstat-no" title="statement not covered" >															_this.win = '';</span>
+<span class="cstat-no" title="statement not covered" >															_this.hideFM = false;</span>
+										};
+&nbsp;
+										this.toggleHideFM = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >															return _this.hideFM = !_this.hideFM;</span>
+										};
+&nbsp;
+										this.games = [{
+															type: 'questions',
+															questions: [{ "text": "name a valve located in the heart",
+																				"answers": [{ "text": "tricuspid", "value": 25 }, { "text": "bicuspid/mitral", "value": 25 }, { "text": "pulmonary", "value": 25 }, { "text": "aortic", "value": 25 }] }, { "text": "name a factor that influences blood pressure",
+																				"answers": [{ "text": "heart rate", "value": 20 }, { "text": "blood volume", "value": 20 }, { "text": "strength of heart contraction", "value": 20 }, { "text": "blood viscosity", "value": 20 }, { "text": "resistance to blood flow", "value": 20 }] }, { "text": "name an endocrine gland",
+																				"answers": [{ "text": "hypothalamus", "value": 10 }, { "text": "pituitary", "value": 10 }, { "text": "thyroid", "value": 10 }, { "text": "parathyroid", "value": 10 }, { "text": "pineal", "value": 10 }, { "text": "thymus", "value": 10 }, { "text": "adrenal", "value": 10 }, { "text": "pancreatic islet/pancreas", "value": 10 }, { "text": "ovary", "value": 10 }, { "text": "testis", "value": 10 }] }, { "text": "what body functions are influenced by prostaglandins",
+																				"answers": [{ "text": "blood pressure", "value": 20 }, { "text": "respiration", "value": 20 }, { "text": "inflammation", "value": 20 }, { "text": "reproductive system", "value": 20 }, { "text": "gastrointestinal secretions", "value": 20 }] }, { "text": "name an organ of the lymphatic system",
+																				"answers": [{ "text": "lymph nodes", "value": 25 }, { "text": "tonsils", "value": 25 }, { "text": "thymus", "value": 25 }, { "text": "spleen", "value": 25 }] }]
+										}, {
+															type: 'fast-money'
+										}, {
+															type: 'questions',
+															questions: [{ "text": "name a hormone secreted by the anterior pituitary gland",
+																				"answers": [{ "text": "thyroid-stimulating hormone", "value": 17 }, { "text": "adrenocorticotropic hormone", "value": 17 }, { "text": "follicle-stimulating hormone", "value": 17 }, { "text": "luteinizing hormone", "value": 17 }, { "text": "growth hormone", "value": 16 }, { "text": "prolactin", "value": 16 }] }, { "text": "name a structure that makes up the conduction system of the heart",
+																				"answers": [{ "text": "sinoatrial node/SA node/pacemaker", "value": 25 }, { "text": "atrioventricular node/AV node", "value": 25 }, { "text": "AV bundle/bundle of his", "value": 25 }, { "text": "Purkinje fibers/subendocardial branches", "value": 25 }] }, { "text": "name a pulse point",
+																				"answers": [{ "text": "superficial temporal artery", "value": 10 }, { "text": "facial artery", "value": 10 }, { "text": "carotid artery", "value": 10 }, { "text": "axillary artery", "value": 10 }, { "text": "brachial artery", "value": 10 }, { "text": "radial artery ", "value": 10 }, { "text": "femoral artery", "value": 10 }, { "text": "popliteal", "value": 10 }, { "text": "posterior tibial", "value": 10 }, { "text": "dorsalis pedis", "value": 10 }] }, { "text": "name a type of blood vessel",
+																				"answers": [{ "text": "artery", "value": 34 }, { "text": "vein", "value": 33 }, { "text": "capillary", "value": 33 }] }, { "text": "name a type of nonspecific immune defense in the body",
+																				"answers": [{ "text": "mechanical/chemical barrier", "value": 20 }, { "text": "inflammation", "value": 20 }, { "text": "phagocytosis", "value": 20 }, { "text": "complement", "value": 20 }, { "text": "interferon", "value": 20 }] }]
+										}, {
+															type: 'fast-money'
+										}];
+					};
+&nbsp;
+					angular.module('feudApp').component('main', {
+										templateUrl: 'app/main/main.html',
+										controller: MainController
+					});
+})();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L1VzZXJzL2R1a2UvY29kZS9mZXVkL2NsaWVudC9hcHAvbWFpbi9tYWluLmNvbnRyb2xsZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7QUFFQSxDQUFDLFlBQVc7QUFBQSxTQUVKLGNBRkksR0FJUiwwQkFBYztBQUFBOztBQUFBOztBQUVaLGNBQUksTUFBTSxDQUFDLFFBQUQsRUFBVSxTQUFWLEVBQW9CLE9BQXBCLEVBQTRCLE1BQTVCLENBQVY7O0FBRUEsZUFBSyxFQUFMLEdBQVUsQ0FBQyxPQUFELEVBQVMsTUFBVCxDQUFWO0FBQ0EsZUFBSyxRQUFMLEdBQWdCLGFBQUk7QUFDekIsbUJBQUksSUFBSSxJQUFJLE9BQUosQ0FBWSxNQUFLLEVBQUwsQ0FBUSxDQUFSLENBQVosQ0FBUjtBQUNBLG1CQUFJLEtBQUssSUFBSSxPQUFKLENBQVksTUFBSyxFQUFMLENBQVEsQ0FBQyxJQUFFLENBQUgsSUFBTSxDQUFkLENBQVosQ0FBVDs7QUFFQSxtQkFBRyxDQUFDLElBQUUsQ0FBSCxJQUFNLElBQUksTUFBVixLQUFxQixFQUF4QixFQUE0QixJQUFJLENBQUMsSUFBRSxDQUFILElBQU0sSUFBSSxNQUFkLENBQTVCLEtBQ0ssSUFBSSxDQUFDLElBQUUsQ0FBSCxJQUFNLElBQUksTUFBZDs7QUFFTCxxQkFBSyxFQUFMLENBQVEsQ0FBUixJQUFhLElBQUksQ0FBSixDQUFiO0FBQ00sV0FSRDs7QUFVQSxlQUFLLEdBQUwsR0FBVztBQUFBLHNCQUFPLElBQUksTUFBSixDQUFXLFVBQUMsQ0FBRCxFQUFHLENBQUg7QUFBQSwyQkFBTyxJQUFFLElBQUUsQ0FBWDtBQUFBLGdCQUFYLEVBQXdCLENBQXhCLENBQVA7QUFBQSxXQUFYOztBQUVBLGNBQUksT0FBTyxJQUFJLEtBQUosQ0FBVSx1QkFBVixDQUFYO0FBQ0EsY0FBSSxPQUFPLElBQUksS0FBSixDQUFVLHVCQUFWLENBQVg7O0FBRUEsZUFBSyxNQUFMLEdBQWMsa0JBQVE7QUFDM0IsbUJBQUcs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NS5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuKGZ1bmN0aW9uKCkge1xuXG4gIGNsYXNzIE1haW5Db250cm9sbGVyIHtcblxuICAgIGNvbnN0cnVjdG9yKCkge1xuXG4gICAgICBsZXQgYXZzID0gWydiZXJuaWUnLCdoaWxsYXJ5JywndHJ1bXAnLCdiaWJpJ107XG5cbiAgICAgIHRoaXMuYXYgPSBbJ3RydW1wJywnYmliaSddO1xuICAgICAgdGhpcy5yb3RhdGVBdiA9IG49PiB7XG5cdGxldCBjID0gYXZzLmluZGV4T2YodGhpcy5hdltuXSk7XG5cdGxldCBjMiA9IGF2cy5pbmRleE9mKHRoaXMuYXZbKG4rMSklMl0pO1xuXG5cdGlmKChjKzEpJWF2cy5sZW5ndGggPT09IGMyKSBjID0gKGMrMiklYXZzLmxlbmd0aDtcblx0ZWxzZSBjID0gKGMrMSklYXZzLmxlbmd0aDtcblxuXHR0aGlzLmF2W25dID0gYXZzW2NdO1xuICAgICAgfTtcblxuICAgICAgdGhpcy5zdW0gPSBhcnIgPT4gYXJyLnJlZHVjZSgocCxjKT0+cCsxKmMsMCk7XG5cbiAgICAgIGxldCBkaW5nID0gbmV3IEF1ZGlvKCdhc3NldHMvYXVkaW8vZGluZy5tcDMnKTtcbiAgICAgIGxldCBidXp6ID0gbmV3IEF1ZGlvKCdhc3NldHMvYXVkaW8vYnV6ei5tcDMnKTtcblxuICAgICAgdGhpcy5yZXZlYWwgPSBhbnN3ZXI9Pntcblx0aWYoYW5zd2VyLnNob3cpIHJldHVybjtcblx0ZGluZy5wbGF5KCk7XG5cblx0YW5zd2VyLnNob3cgPSB0cnVlO1xuXHRpZih0aGlzLnhzIDwgMykgdGhpcy5xc2NvcmUgKz0gYW5zd2VyLnZhbHVlO1xuICAgICAgfTtcblxuICAgICAgdGhpcy5zY29yZXMgPSBbMCwwXTtcbiAgICAgIHRoaXMucXNjb3JlID0gMDtcbiAgICAgIHRoaXMueHMgPSAwO1xuICAgICAgdGhpcy5hcnIgPSBuPT4gQXJyYXkuYXBwbHkobnVsbCxuZXcgQXJyYXkobikpLm1hcChtPT4xKTtcblxuICAgICAgdGhpcy5mZiA9IGE9PiAoYXx8W10pLnNsaWNlKDAsNSk7XG4gICAgICB0aGlzLmxmID0gYT0+IChhfHxbXSkuc2xpY2UoNSwxMCk7XG5cbiAgICAgIHRoaXMuc2NvcmVUbyA9IHRlYW1JPT57XG5cdGlmKHRoaXMuZ2FtZXNbdGhpcy5nYW1lSV0udHlwZSA9PT0gJ3F1ZXN0aW9ucycpe1xuXHQgIHRoaXMuc2NvcmVzW3RlYW1JXSArPSB0aGlzLnFzY29yZTtcblx0ICB0aGlzLnFzY29yZSA9IDA7XG5cdH1lbHNle1xuXHQgIGlmKHRoaXMuc3VtKHRoaXMuZm1zWzBdKSt0aGlzLnN1bSh0aGlzLmZtc1sxXSkgPiAxOTkpe1xuXHQgICAgdGhpcy53aW4gPSAnVEVBTSAnICsgdGhpcy5hdlt0ZWFtSV0udG9VcHBlckNhc2UoKSArICcgV0lOUyc7XG5cdCAgfWVsc2V7XG5cdCAgICB0aGlzLndpbiA9ICdURUFNICcgKyB0aGlzLmF2W3RlYW1JXS50b1VwcGVyQ2FzZSgpICsgJyBMT1NFUyc7XG5cdCAgfVxuXHR9XG4gICAgICB9O1xuXG4gICAgICB0aGlzLmdhbWVJID0gLTE7XG5cbiAgICAgIHRoaXMucHJldkdhbWUgPSAoKT0+IHtcblx0dGhpcy5nYW1lSSA9IE1hdGgubWF4KDAsdGhpcy5nYW1lSS0xKTtcblx0dGhpcy5xSSA9IDA7XG5cdGlmKHRoaXMuZ2FtZXNbdGhpcy5nYW1lSV0udHlwZSA9PT0gJ3F1ZXN0aW9ucycpIHRoaXMuY2xlYXIoKTtcbiAgICAgIH07XG5cbiAgICAgIHRoaXMubmV4dEdhbWUgPSAoKT0+IHtcblx0dGhpcy5nYW1lSSA9IE1hdGgubWluKHRoaXMuZ2FtZXMubGVuZ3RoLTEsdGhpcy5nYW1lSSsxKTtcblx0dGhpcy5xSSA9IDA7XG5cdHRoaXMuZm1zID0gW1tdLFtdXTtcblx0aWYodGhpcy5nYW1lc1t0aGlzLmdhbWVJXS50eXBlID09PSAncXVlc3Rpb25zJykgdGhpcy5jbGVhcigpO1xuICAgICAgfTtcblxuICAgICAgdGhpcy5wcmV2USA9ICgpPT4ge1xuXHR0aGlzLnFJID0gTWF0aC5tYXgoMCx0aGlzLnFJLTEpO1xuXHR0aGlzLnFzY29yZSA9IDA7XG5cdHRoaXMueHMgPSAwO1xuICAgICAgfTtcblxuICAgICAgdGhpcy5uZXh0USA9ICgpPT4ge1xuXHR0aGlzLnFJID0gTWF0aC5taW4odGhpcy5nYW1lc1t0aGlzLmdhbWVJXS5xdWVzdGlvbnMubGVuZ3RoLTEsXG5cdFx0XHQgICB0aGlzLnFJKzEpO1xuXHR0aGlzLnFzY29yZSA9IDA7XG5cdHRoaXMueHMgPSAwO1xuICAgICAgfTtcblxuICAgICAgdGhpcy54ID0gKCk9Pntcblx0dGhpcy54cyArPSAxO1xuXHRidXp6LnBsYXkoKTtcbiAgICAgIH07XG5cbiAgICAgIHRoaXMuY2xlYXIgPSAoKT0+IHtcblx0dGhpcy54cyA9IDA7XG5cdHRoaXMuc2NvcmVzID0gWzAsMF07XG5cdHRoaXMud2luID0gJyc7XG5cdHRoaXMuaGlkZUZNID0gZmFsc2U7XG4gICAgICB9O1xuXG4gICAgICB0aGlzLnRvZ2dsZUhpZGVGTSA9ICgpPT4gKHRoaXMuaGlkZUZNID0gIXRoaXMuaGlkZUZNKTtcblxuICAgICAgdGhpcy5nYW1lcyA9IFtcblx0e1xuXHQgIHR5cGU6J3F1ZXN0aW9ucycsXG5cdCAgcXVlc3Rpb25zOltcblx0ICAgIHtcInRleHRcIjpcIm5hbWUgYSB2YWx2ZSBsb2NhdGVkIGluIHRoZSBoZWFydFwiLFxuXHQgICAgIFwiYW5zd2Vyc1wiOltcblx0ICAgICAgIHtcInRleHRcIjpcInRyaWN1c3BpZFwiLFwidmFsdWVcIjoyNX0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJiaWN1c3BpZC9taXRyYWxcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwicHVsbW9uYXJ5XCIsXCJ2YWx1ZVwiOjI1fSxcblx0ICAgICAgIHtcInRleHRcIjpcImFvcnRpY1wiLFwidmFsdWVcIjoyNX1cblx0ICAgICBdfSxcblx0ICAgIHtcInRleHRcIjpcIm5hbWUgYSBmYWN0b3IgdGhhdCBpbmZsdWVuY2VzIGJsb29kIHByZXNzdXJlXCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwiaGVhcnQgcmF0ZVwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJibG9vZCB2b2x1bWVcIixcInZhbHVlXCI6MjB9LFxuXHQgICAgICAge1widGV4dFwiOlwic3RyZW5ndGggb2YgaGVhcnQgY29udHJhY3Rpb25cIixcInZhbHVlXCI6MjB9LFxuXHQgICAgICAge1widGV4dFwiOlwiYmxvb2QgdmlzY29zaXR5XCIsXCJ2YWx1ZVwiOjIwfSxcblx0ICAgICAgIHtcInRleHRcIjpcInJlc2lzdGFuY2UgdG8gYmxvb2QgZmxvd1wiLFwidmFsdWVcIjoyMH1cblx0ICAgICBdfSxcblx0ICAgIHtcInRleHRcIjpcIm5hbWUgYW4gZW5kb2NyaW5lIGdsYW5kXCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwiaHlwb3RoYWxhbXVzXCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcInBpdHVpdGFyeVwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJ0aHlyb2lkXCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcInBhcmF0aHlyb2lkXCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcInBpbmVhbFwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJ0aHltdXNcIixcInZhbHVlXCI6MTB9LFxuXHQgICAgICAge1widGV4dFwiOlwiYWRyZW5hbFwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJwYW5jcmVhdGljIGlzbGV0L3BhbmNyZWFzXCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcIm92YXJ5XCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcInRlc3Rpc1wiLFwidmFsdWVcIjoxMH1cblx0ICAgICBdfSxcblx0ICAgIHtcInRleHRcIjpcIndoYXQgYm9keSBmdW5jdGlvbnMgYXJlIGluZmx1ZW5jZWQgYnkgcHJvc3RhZ2xhbmRpbnNcIixcblx0ICAgICBcImFuc3dlcnNcIjpbXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJibG9vZCBwcmVzc3VyZVwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJyZXNwaXJhdGlvblwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJpbmZsYW1tYXRpb25cIixcInZhbHVlXCI6MjB9LFxuXHQgICAgICAge1widGV4dFwiOlwicmVwcm9kdWN0aXZlIHN5c3RlbVwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJnYXN0cm9pbnRlc3RpbmFsIHNlY3JldGlvbnNcIixcInZhbHVlXCI6MjB9XG5cdCAgICAgXX0sXG5cdCAgICB7XCJ0ZXh0XCI6XCJuYW1lIGFuIG9yZ2FuIG9mIHRoZSBseW1waGF0aWMgc3lzdGVtXCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwibHltcGggbm9kZXNcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwidG9uc2lsc1wiLFwidmFsdWVcIjoyNX0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJ0aHltdXNcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwic3BsZWVuXCIsXCJ2YWx1ZVwiOjI1fVxuXHQgICAgIF19XG5cdCAgXVxuXHR9LHtcblx0ICB0eXBlOidmYXN0LW1vbmV5J1xuXHR9LHtcblx0ICB0eXBlOidxdWVzdGlvbnMnLFxuXHQgIHF1ZXN0aW9uczpbXG5cdCAgICB7XCJ0ZXh0XCI6XCJuYW1lIGEgaG9ybW9uZSBzZWNyZXRlZCBieSB0aGUgYW50ZXJpb3IgcGl0dWl0YXJ5IGdsYW5kXCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwidGh5cm9pZC1zdGltdWxhdGluZyBob3Jtb25lXCIsXCJ2YWx1ZVwiOjE3fSxcblx0ICAgICAgIHtcInRleHRcIjpcImFkcmVub2NvcnRpY290cm9waWMgaG9ybW9uZVwiLFwidmFsdWVcIjoxN30sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJmb2xsaWNsZS1zdGltdWxhdGluZyBob3Jtb25lXCIsXCJ2YWx1ZVwiOjE3fSxcblx0ICAgICAgIHtcInRleHRcIjpcImx1dGVpbml6aW5nIGhvcm1vbmVcIixcInZhbHVlXCI6MTd9LFxuXHQgICAgICAge1widGV4dFwiOlwiZ3Jvd3RoIGhvcm1vbmVcIixcInZhbHVlXCI6MTZ9LFxuXHQgICAgICAge1widGV4dFwiOlwicHJvbGFjdGluXCIsXCJ2YWx1ZVwiOjE2fVxuXHQgICAgIF19LFxuXHQgICAge1widGV4dFwiOlwibmFtZSBhIHN0cnVjdHVyZSB0aGF0IG1ha2VzIHVwIHRoZSBjb25kdWN0aW9uIHN5c3RlbSBvZiB0aGUgaGVhcnRcIixcblx0ICAgICBcImFuc3dlcnNcIjpbXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJzaW5vYXRyaWFsIG5vZGUvU0Egbm9kZS9wYWNlbWFrZXJcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwiYXRyaW92ZW50cmljdWxhciBub2RlL0FWIG5vZGVcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwiQVYgYnVuZGxlL2J1bmRsZSBvZiBoaXNcIixcInZhbHVlXCI6MjV9LFxuXHQgICAgICAge1widGV4dFwiOlwiUHVya2luamUgZmliZXJzL3N1YmVuZG9jYXJkaWFsIGJyYW5jaGVzXCIsXCJ2YWx1ZVwiOjI1fVxuXHQgICAgIF19LFxuXHQgICAge1widGV4dFwiOlwibmFtZSBhIHB1bHNlIHBvaW50XCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwic3VwZXJmaWNpYWwgdGVtcG9yYWwgYXJ0ZXJ5XCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcImZhY2lhbCBhcnRlcnlcIixcInZhbHVlXCI6MTB9LFxuXHQgICAgICAge1widGV4dFwiOlwiY2Fyb3RpZCBhcnRlcnlcIixcInZhbHVlXCI6MTB9LFxuXHQgICAgICAge1widGV4dFwiOlwiYXhpbGxhcnkgYXJ0ZXJ5XCIsXCJ2YWx1ZVwiOjEwfSxcblx0ICAgICAgIHtcInRleHRcIjpcImJyYWNoaWFsIGFydGVyeVwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJyYWRpYWwgYXJ0ZXJ5IFwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJmZW1vcmFsIGFydGVyeVwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJwb3BsaXRlYWxcIixcInZhbHVlXCI6MTB9LFxuXHQgICAgICAge1widGV4dFwiOlwicG9zdGVyaW9yIHRpYmlhbFwiLFwidmFsdWVcIjoxMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJkb3JzYWxpcyBwZWRpc1wiLFwidmFsdWVcIjoxMH1cblx0ICAgICBdfSxcblx0ICAgIHtcInRleHRcIjpcIm5hbWUgYSB0eXBlIG9mIGJsb29kIHZlc3NlbFwiLFxuXHQgICAgIFwiYW5zd2Vyc1wiOltcblx0ICAgICAgIHtcInRleHRcIjpcImFydGVyeVwiLFwidmFsdWVcIjozNH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJ2ZWluXCIsXCJ2YWx1ZVwiOjMzfSxcblx0ICAgICAgIHtcInRleHRcIjpcImNhcGlsbGFyeVwiLFwidmFsdWVcIjozM31cblx0ICAgICBdfSxcblx0ICAgIHtcInRleHRcIjpcIm5hbWUgYSB0eXBlIG9mIG5vbnNwZWNpZmljIGltbXVuZSBkZWZlbnNlIGluIHRoZSBib2R5XCIsXG5cdCAgICAgXCJhbnN3ZXJzXCI6W1xuXHQgICAgICAge1widGV4dFwiOlwibWVjaGFuaWNhbC9jaGVtaWNhbCBiYXJyaWVyXCIsXCJ2YWx1ZVwiOjIwfSxcblx0ICAgICAgIHtcInRleHRcIjpcImluZmxhbW1hdGlvblwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJwaGFnb2N5dG9zaXNcIixcInZhbHVlXCI6MjB9LFxuXHQgICAgICAge1widGV4dFwiOlwiY29tcGxlbWVudFwiLFwidmFsdWVcIjoyMH0sXG5cdCAgICAgICB7XCJ0ZXh0XCI6XCJpbnRlcmZlcm9uXCIsXCJ2YWx1ZVwiOjIwfVxuXHQgICAgIF19XG5cdCAgXVxuXHR9LHtcblx0ICB0eXBlOidmYXN0LW1vbmV5J1xuXHR9XG4gICAgICBdO1xuXG5cbiAgICB9XG4gIH1cblxuICBhbmd1bGFyLm1vZHVsZSgnZmV1ZEFwcCcpXG4gICAgLmNvbXBvbmVudCgnbWFpbicsIHtcbiAgICAgIHRlbXBsYXRlVXJsOiAnYXBwL21haW4vbWFpbi5odG1sJyxcbiAgICAgIGNvbnRyb2xsZXI6IE1haW5Db250cm9sbGVyXG4gICAgfSk7XG5cbn0pKCk7XG4iXX0=</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 03 2016 22:00:19 GMT+0300 (Jerusalem Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
