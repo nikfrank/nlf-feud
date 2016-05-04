@@ -59,7 +59,7 @@
   </h1>
   <div class="fast-money">
     <div class="fast-round" ng-repeat="b in [0,1]">
-      <input ng-repeat-start="a in [0,1,2,3,4]" ng-class="{hidefm:$ctrl.hideFM}">
+      <input ng-repeat-start="a in [0,1,2,3,4]" ng-class="{hidefm:$ctrl.hideFM&&!b}">
       <input ng-model="$ctrl.fms[b][a]">
       <br ng-repeat-end>
       <div class="player-total">
