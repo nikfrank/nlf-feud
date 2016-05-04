@@ -23,6 +23,12 @@
 
       let ding = new Audio('assets/audio/ding.mp3');
       let buzz = new Audio('assets/audio/buzz.mp3');
+      let theme = new Audio('assets/audio/theme.mp3');
+
+      this.toggleTheme = ()=>{
+	theme.paused? theme.play():theme.pause();
+	
+      };
 
       this.reveal = answer=>{
 	if(answer.show) return;

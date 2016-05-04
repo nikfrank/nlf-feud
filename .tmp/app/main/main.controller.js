@@ -28,6 +28,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 										var ding = new Audio('assets/audio/ding.mp3');
 										var buzz = new Audio('assets/audio/buzz.mp3');
+										var theme = new Audio('assets/audio/theme.mp3');
+
+										this.toggleTheme = function () {
+															theme.paused ? theme.play() : theme.pause();
+										};
 
 										this.reveal = function (answer) {
 															if (answer.show) return;

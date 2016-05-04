@@ -1,5 +1,5 @@
 <div ng-if="$ctrl.gameI == -1" class="logo">
-  <img src="assets/images/logo.png">
+  <img src="assets/images/logo.png" ng-click="$ctrl.toggleTheme()">
 </div>
 
 <div ng-if="$ctrl.games[$ctrl.gameI].type == 'questions'">
