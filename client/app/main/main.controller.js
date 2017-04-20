@@ -217,9 +217,9 @@
             {
               text: 'Which classes of diabetic medications can cause hypoglycemia (low sugar)?',
               answers: [
-                { text: 'insulin', value: 45 },
-                { text: 'sulfonylurea', value: 22 },
-                { text: 'meglitinide', value: 17 }
+                { text: 'insulin', value: 55 },
+                { text: 'sulfonylurea', value: 25 },
+                { text: 'meglitinide', value: 20 }
               ]
             },
             {

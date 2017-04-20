@@ -163,7 +163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       type: 'questions',
       questions: [{
         text: 'Which classes of diabetic medications can cause hypoglycemia (low sugar)?',
-        answers: [{ text: 'insulin', value: 45 }, { text: 'sulfonylurea', value: 22 }, { text: 'meglitinide', value: 17 }]
+        answers: [{ text: 'insulin', value: 55 }, { text: 'sulfonylurea', value: 25 }, { text: 'meglitinide', value: 20 }]
       }, {
         text: 'Which classes of diabetic medications can cause weight gain?',
         answers: [{ text: 'insulin', value: 28 }, { text: 'sulfonylurea', value: 26 }, { text: 'meglitinide', value: 24 }, { text: 'thiazolidinedione', value: 22 }]
