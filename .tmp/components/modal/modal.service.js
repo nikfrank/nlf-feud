@@ -8,8 +8,8 @@ angular.module('feudApp').factory('Modal', function ($rootScope, $uibModal) {
    * @return {Object}            - the instance $uibModal.open() returns
    */
   function openModal() {
-    var scope = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-    var modalClass = arguments.length <= 1 || arguments[1] === undefined ? 'modal-default' : arguments[1];
+    var scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var modalClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'modal-default';
 
     var modalScope = $rootScope.$new();
 
@@ -33,9 +33,8 @@ angular.module('feudApp').factory('Modal', function ($rootScope, $uibModal) {
        * @param  {Function} del - callback, ran when delete is confirmed
        * @return {Function}     - the function to open the modal (ex. myModalFn)
        */
-
       delete: function _delete() {
-        var del = arguments.length <= 0 || arguments[0] === undefined ? angular.noop : arguments[0];
+        var del = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : angular.noop;
 
         /**
          * Open a delete confirmation modal

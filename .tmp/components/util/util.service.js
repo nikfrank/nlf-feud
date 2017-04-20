@@ -13,7 +13,6 @@
        * @param  {Function|*} cb - a 'potential' function
        * @return {Function}
        */
-
       safeCb: function safeCb(cb) {
         return angular.isFunction(cb) ? cb : angular.noop;
       },

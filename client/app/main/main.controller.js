@@ -101,7 +101,7 @@
 
       this.toggleHideFM = ()=> (this.hideFM = !this.hideFM);
 
-      this.games = [
+      this.oldGames = [
 	{
 	  type:'questions',
 	  questions:[
@@ -149,9 +149,13 @@
 	       {"text":"spleen","value":25}
 	     ]}
 	  ]
-	},{
+	},
+
+        {
 	  type:'fast-money'
-	},{
+	},
+
+        {
 	  type:'questions',
 	  questions:[
 	    {"text":"name a hormone secreted by the anterior pituitary gland",
@@ -198,11 +202,201 @@
 	       {"text":"interferon","value":20}
 	     ]}
 	  ]
-	},{
+	},
+
+        {
 	  type:'fast-money'
 	}
       ];
 
+      
+      this.games = [
+        {
+	  type:'questions',
+	  questions:[
+            {
+              text: 'Which classes of diabetic medications can cause hypoglycemia (low sugar)?',
+              answers: [
+                { text: 'insulin', value: 45 },
+                { text: 'sulfonylurea', value: 22 },
+                { text: 'meglitinide', value: 17 }
+              ]
+            },
+            {
+              text: 'Which classes of diabetic medications can cause weight gain?',
+              answers: [
+                { text: 'insulin', value: 28 },
+                { text: 'sulfonylurea', value: 26 },
+                { text: 'meglitinide', value: 24 },
+                { text: 'thiazolidinedione', value: 22 }
+              ]
+            },
+
+            {
+              text: 'Name signs of diabetes',
+              answers: [
+                { text: 'glucosuria', value: 25 },
+                { text: 'polyuria', value: 21 },
+                { text: 'polydipsia', value: 21 },
+                { text: 'blurred vision', value: 18 },
+                { text: 'polyphagia', value: 18 },
+                { text: 'weight loss', value: 27 }
+              ]
+            },
+
+            {
+              text: 'name long-term complications of diabetes',
+              answers: [
+                { text: 'cardiovascular disease', value: 32 },
+                { text: 'neuropathy', value: 15 },
+                { text: 'nephropathy', value: 14 },
+                { text: 'retinopathy', value: 14 },
+                { text: 'erectile dysfunction', value: 13 },
+                { text: 'dental problems', value: 6 },
+                { text: 'skin problems', value: 6 },
+              ]
+            },
+            
+            {
+              text: 'name a fast-acting insulin',
+              answers: [
+                { text: 'aspart', value: 37 },
+                { text: 'glulisine', value: 34 },
+                { text: 'lispro', value: 29 },
+              ]
+            },
+            
+            {
+              text: 'name signs of hypoglycemia (low sugar)',
+              answers: [
+                { text: 'sweating', value: 15 },
+                { text: 'headache', value: 14 },
+                { text: 'fatigue', value: 14 },
+                { text: 'trembling', value: 14 },
+                { text: 'hunger', value: 13 },
+                { text: 'diziness', value: 12 },
+                { text: 'mood changes', value: 12 },
+                { text: 'blurred vision', value: 5 }
+              ]
+            },
+
+            {
+              text: 'What equals 15 gram of a fast-acting carbohydrate (to treat hypoglycemia)?',
+              answers: [
+                { text: '3 packets of table sugar', value: 19 },
+                { text: '1 tablespoon of honey', value: 18 },
+                { text: '3/4 cup of juice or regular soda', value: 16 },
+                { text: '6 Lifesavers', value: 16 },
+                { text: '2 packets of Rockets', value: 16 },
+                { text: '4 Dex 4 tablets', value: 15 }
+              ]
+            },
+            
+            {
+              text: 'Risk factors of diabetes',
+              answers: [
+                { text: 'increasing age', value: 23 },
+                { text: 'family history', value: 22 },
+                { text: 'obesity', value: 19 },
+                { text: 'physical inactivity', value: 18 },
+                { text: 'smoking', value: 18 }
+              ]
+            }
+          ]
+        },
+        
+        {
+	  type:'fast-money'
+        },
+
+        {
+          type:'questions',
+          questions:[              
+            {
+              text:'name a symptom of hyperthyroidism',
+              answers: [
+                { text: 'rapid heart rate', value: 22 },
+                { text: 'tremor', value: 21 },
+                { text: 'nervousness', value: 18 },
+                { text: 'sweating', value: 17 },
+                { text: 'heat intolerance', value: 17 },
+                { text: 'bulging eyes (give small amount of points)', value: 5 }
+              ]
+            },
+
+            {
+              text:'Name a symptom of hypothyroidism',
+              answers: [
+                { text: 'slow heart rate', value: 28 },
+                { text: 'lethargy', value: 26 },
+                { text: 'dry coarse hair', value: 24 },
+                { text: 'cold intolerance', value: 22 }
+              ]
+            },
+            
+            {
+              text:'Name a specific type of body fluid (in a specific area)',
+              answers: [
+                { text: 'cerebrospinal fluid', value: 23 },
+                { text: 'synovial fluid', value: 22 },
+                { text: 'intracellular fluid', value: 20 },
+                { text: 'blood', value: 18 },
+                { text: 'aqueous and/or vitreous humor', value: 17 }
+              ]
+            },
+            
+            {
+              text:'name an anion in the body',
+              answers: [
+                { text: 'bicarbonate HCO_3 (−)', value: 28 },
+                { text: 'chloride Cl (−)', value: 26 },
+                { text: 'phosphate PO_4 (−)', value: 24 },
+                { text: 'sulfate SO_4 (2−)', value: 22 }
+              ]
+            },
+            
+            {
+              text:'Name a cation in the body',
+              answers: [
+                { text: 'calcium Ca (2+)', value: 27 },
+                { text: 'magnesium Mg (2+)', value: 26 },
+                { text: 'potassium K (+)', value: 25 },
+                { text: 'sodium Na (+)', value: 22 }
+              ]
+            },
+            
+            {
+              text:'name a cause of hypercalcemia',
+              answers: [
+                { text: 'lung/breast cancer', value: 18 },
+                { text: 'overactive parathyroid', value: 18 },
+                { text: 'osteoporosis', value: 17 },
+                { text: 'thiazide diuretics', value: 16 },
+                { text: 'vitamin D supplements', value: 16 },
+                { text: 'excessive doses of calcium', value: 15 }
+              ]
+            },
+            
+            {
+              text:'name a sign/symptom of hypokalemia',
+              answers: [
+                { text: 'cardiac arrhythmias', value: 33 },
+                { text: 'muscle weakness', value: 25 },
+                { text: 'anorexia', value: 7 },
+                { text: 'nausea', value: 7 },
+                { text: 'vomiting', value: 7 },
+                { text: 'depression', value: 7 },
+                { text: 'confusion', value: 7 },
+                { text: 'decreased reflexes', value: 7 }
+              ]
+            }
+          ]
+	},
+        
+        {
+	  type:'fast-money'
+	}
+      ];
 
     }
   }
