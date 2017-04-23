@@ -320,7 +320,7 @@
                 { text: 'nervousness', value: 18 },
                 { text: 'sweating', value: 17 },
                 { text: 'heat intolerance', value: 17 },
-                { text: 'bulging eyes (give small amount of points)', value: 5 }
+                { text: 'bulging eyes', value: 5 }
               ]
             },
 
